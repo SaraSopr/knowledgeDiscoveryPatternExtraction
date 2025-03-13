@@ -14,8 +14,7 @@ Within each pair, the two individuals can swap places: (2!)^5
 So, 5!*(2!)^5
 
 2.Irene Adler hides messages using k distinct numbers chosen from the set of numbers 1 to n. The numbers must be in increasing order. When we choose the numbers, it doesn’t matter in what order we pick them. Once picked, they will be sorted in increasing order automatically. The number of ways to make sorted arrays of k distinct numbers from n numbers is:
-\[
-\binom{n}{k} = \frac{n!}{k!(n-k)!}
-\]
+
+$\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 
 3
