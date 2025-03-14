@@ -17,4 +17,25 @@ So, 5!*(2!)^5
 
 $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 
-3
+3 A mechanical hound moves on an $n \times m$ grid from $(1,1)$ to $(n,m)$, only moving **right** or **down**.
+
+## a) Paths Without Restrictions
+The total number of possible paths is given by the binomial coefficient:
+
+$$
+\binom{n+m-2}{n-1} = \frac{(n+m-2)!}{(n-1)!(m-1)!}
+$$
+
+## b) First Move Must Be Right
+If the hound **must move right first**, it will be at $(1,2)$. From there, it has **$(n-1)$ down moves** and **$(m-2)$ right moves** left:
+
+$$
+\binom{n+m-3}{n-1} = \frac{(n+m-3)!}{(n-1)!(m-2)!}
+$$
+
+## c) Exactly 3 Direction Changes
+The hound **switches direction (right → down or down → right) exactly three times**. This means dividing its moves into two blocks of right moves and two blocks of down moves:
+
+$$
+\binom{m-1}{2} \binom{n-1}{2}
+$$
