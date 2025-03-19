@@ -52,30 +52,24 @@ $$
 #### 9.a
 When the spy tries passwords randomly and discards those that don't work, the probability of success on the k-th attempt is not constant. This is because, after each failure, the number of remaining passwords decreases, and the probability of success adjusts accordingly.
 If there are n passwords and  k-1 failed attempts, the probability of success on the k-th attempt is:  
-$$ P(k) = \frac{1}{n - (k-1)} $$
-Where $ n - (k-1) $ is the number of remaining passwords.
+$$P(k) = \frac{1}{n - (k-1)}$$
+Where $n - (k-1)$ is the number of remaining passwords.
 
 
 #### 9.b
 
-For the k-th attempt to be successful, the first \( k-1 \) attempts must all be failures. However, in this scenario, the spy does not discard any passwords, meaning he can select the same incorrect passwords multiple times.
+For the k-th attempt to be successful, the first k-1 attempts must all be failures. However, in this scenario, the spy does not discard any passwords, meaning he can select the same incorrect passwords multiple times.
 
 
-   - The probability of failing on any single attempt remains $$ \frac{n-1}{n} $$
+   - The probability of failing on any single attempt remains $$\frac{n-1}{n}$$
    - Therefore, the probability of failing \( k-1 \) times before succeeding on the k-th attempt is:
-   $$
-   \left(\frac{n-1}{n}\right)^{k-1}
-   $$
+   $$\left(\frac{n-1}{n}\right)^{k-1}$$
 
 - The probability that the k-th attempt is successful (after \( k-1 \) failures) is still:
-   $$
-   \frac{1}{n}
-   $$
+   $$\frac{1}{n}$$
 
 The total probability that the k-th attempt wins is:
-   $$
-   P(\text{k-th attempt wins}) = \left(\frac{n-1}{n}\right)^{k-1} \cdot \frac{1}{n}
-   $$
+   $$P(\text{k-th attempt wins}) = \left(\frac{n-1}{n}\right)^{k-1} \cdot \frac{1}{n}$$
 
 
 
@@ -85,17 +79,13 @@ The total probability that the k-th attempt wins is:
 We want to find the probability that two distinct numbers appear exactly three times each when rolling a die six times.
 
 Choose the number that will appear thrice: 
-$$
-   \binom{6}{2} = 15 \text{ ways}
- $$
+$$\binom{6}{2} = 15 \text{ ways}$$
 We need to choose 3 different numbers from the remaining 5 numbers (since one number is already chosen). This can be done in: $\frac{6!}{3!3!} = 20$
 
 Total outcomes: $ 6^6 = 46656$
 
 The probability of getting two numbers appearing thrice each is:
-   $$
-   \frac{15 \times 20}{46656} = \frac{300}{46656} \approx 0.00642
-   $$
+   $$\frac{15 \times 20}{46656} = \frac{300}{46656} \approx 0.00642$$
 
 #### 10.b
 
@@ -131,15 +121,11 @@ Calculate the Specific Distribution:
 
    - Distributing Letters:
      - For the 4 informants receiving 2 letters each:
-       $$
-       \frac{20!}{(2!)^4 \cdot (4!)^3 }
-       $$
+       $$\frac{20!}{(2!)^4 \cdot (4!)^3 }$$
 
 
    The final probability is given by the ratio of favorable outcomes to total outcomes:
-   $$
-   P = \frac{\text{Favorable Outcomes}}{\text{Total Outcomes}} = \frac{\binom{12}{4} \cdot \binom{8}{3} \cdot \frac{20!}{(2!)^4 \cdot (4!)^3}}{12^{20}}
-   $$
+   $$P = \frac{\text{Favorable Outcomes}}{\text{Total Outcomes}} = \frac{\binom{12}{4} \cdot \binom{8}{3} \cdot \frac{20!}{(2!)^4 \cdot (4!)^3}}{12^{20}}$$
 
 
 ## 12)
