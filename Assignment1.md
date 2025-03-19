@@ -44,9 +44,81 @@ $$
 \binom{m-1}{2} \binom{n-1}{2}
 $$
 
+
+
+## 9)
+
+#### 9.a
+When the spy tries passwords randomly and discards those that don't work, the probability of success on the k-th attempt is not constant. This is because, after each failure, the number of remaining passwords decreases, and the probability of success adjusts accordingly.
+If there are n passwords and  k-1 failed attempts, the probability of success on the k-th attempt is:  
+$$ P(k) = \frac{1}{n - (k-1)} $$
+Where $ n - (k-1) $ is the number of remaining passwords.
+
+
+#### 9.b
+
+For the k-th attempt to be successful, the first \( k-1 \) attempts must all be failures. However, in this scenario, the spy does not discard any passwords, meaning he can select the same incorrect passwords multiple times.
+
+
+   - The probability of failing on any single attempt remains $$ \frac{n-1}{n} $$
+   - Therefore, the probability of failing \( k-1 \) times before succeeding on the k-th attempt is:
+   $$
+   \left(\frac{n-1}{n}\right)^{k-1}
+   $$
+
+- The probability that the k-th attempt is successful (after \( k-1 \) failures) is still:
+   $$
+   \frac{1}{n}
+   $$
+
+The total probability that the k-th attempt wins is:
+   $$
+   P(\text{k-th attempt wins}) = \left(\frac{n-1}{n}\right)^{k-1} \cdot \frac{1}{n}
+   $$
+
+
+
+
 ## 10)
+#### 10.a
+We want to find the probability that two distinct numbers appear exactly three times each when rolling a die six times.
 
+Choose the number that will appear thrice: 
+$$
+   \binom{6}{2} = 15 \text{ ways}
+ $$
+We need to choose 3 different numbers from the remaining 5 numbers (since one number is already chosen). This can be done in: $\frac{6!}{3!3!} = 20$
 
+Total outcomes: $ 6^6 = 46656$
+
+The probability of getting two numbers appearing thrice each is:
+   $$
+   \frac{15 \times 20}{46656} = \frac{300}{46656} \approx 0.00642
+   $$
+
+#### 10.b
+
+-Choose which number appears three times:
+$$\binom{6}{1} = 6 \text{ ways}$$
+
+-Choose positions for the selected number:
+we select which 3 positions out of 6 will contain our selected number:
+$$\binom{6}{3} = 20 \text{ ways}$$
+
+-Fill the remaining 3 positions:
+for the remaining 3 positions, we need to ensure no other number appears three times. This means we can only use the other 5 numbers in configurations where none appears more than twice.
+Two different numbers (one appears twice, one appears once)
+- Choose which number appears twice: $\binom{5}{1} = 5$ ways
+- Choose which number appears once from the remaining 4 numbers: $\binom{4}{1} = 4$ ways
+- Choose which 2 positions (out of 3) will have the number that appears twice: $\binom{3}{2} = 3$ ways
+- Total for Case 2: $5 \times 4 \times 3 = 60$ ways
+
+Total favorable outcomes: $6 \times 20 \times (60 + 60) = 6 \times 20 \times 120 = 14,400$
+
+Total possible outcomes: $6^6 = 46,656$
+
+Final Probability:
+$$P = \frac{14,400}{46,656} = \frac{25}{81} \approx 0.309 \text{ or about } 30.9\%$$
 
 ## 11)
 The total number of ways to distribute 20 distinct letters to 12 informants is given by $12^{20}$
@@ -71,8 +143,7 @@ Calculate the Specific Distribution:
 
 ## 12)
 The probability of a single clue landing in the first bucket is $$ p = \frac{1}{n}$$ 
-Otherwise, the probability of a single clue landing in others buckets is $ 1-p $.
-Since the clues are assigned independently, the total number of clues that end up in the first bucket follows a binomial distribution:
+Otherwise, the probability of a single clue landing in others buckets is $ 1-p $.  Since the clues are assigned independently, the total number of clues that end up in the first bucket follows a binomial distribution:
 $$
 X \sim \text{Binom}(m, p)
 $$
