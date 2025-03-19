@@ -51,6 +51,88 @@ $$
 \binom{m-1}{2} \binom{n-1}{2}
 $$
 
+## 4)
+
+The total number of ways to choose 5 cards from a 52-card deck is given by the combination formula:
+$$\binom{52}{5} = \frac{52!}{5!(52-5)!} = 2,598,960$$
+
+#### 4.a
+
+A flush consists of 5 cards of the same suit. This includes both regular flushes and straight flushes.
+
+
+-There are 4 suits in a deck, so we have to chose the suit. For each suit, the number of ways to choose 5 cards is:
+   $$\binom{13}{5}$$
+   Calculating this gives:
+   $$\binom{13}{5} = \frac{13 \times 12 \times 11 \times 10 \times 9}{5 \times 4 \times 3 \times 2 \times 1} = 1,287$$
+ The total number of flushes (including straight flushes) is:
+   $$4 \times \binom{13}{5} = 4 \times 1,287 = 5,148$$
+
+A straight flush is a special case of a flush where the 5 cards are in consecutive rank. There are 10 possible straight flushes for each suit (A-5, 2-6, ..., 10-A), so:
+   $$4 \times 10 = 40 \text{ straight flushes}$$
+
+The total number of flushes (including straight flushes) is:
+$$5,148 + 40 = 5,188$$
+
+Probability of a Flush:
+$$P(\text{Flush}) = \frac{5,188}{2,598,960} \approx 0.00199 \text{ or } 0.199\%$$
+
+#### 4.b. 
+Choose 2 ranks from the 13 available ranks:
+   $$\binom{13}{2} = 78$$
+ 
+For each of the two ranks, choose 2 suits out of 4:
+   $$\binom{4}{2} \times \binom{4}{2} = 6 \times 6 = 36$$
+
+Choose a rank for the fifth card (which cannot be one of the ranks already chosen):
+   $$\binom{11}{1} = 11$$
+   Then choose a suit for this card:
+   $$\binom{4}{1} = 4$$
+
+The total number of two pair hands is:
+   $$78 \times 36 \times 11 \times 4 = 123,552$$
+
+Probability of Two Pairs:
+$$P(\text{Two Pairs}) = \frac{123,552}{2,598,960} \approx 0.0475$$
+
+#### 4.c
+
+A hand with four of a kind consists of four cards of one rank and one card of a different rank.
+
+Choose 1 rank from the 13 available ranks:
+   $$\binom{13}{1} = 13$$
+
+Choose a rank for the fifth card (which cannot be the same as the four of a kind):
+   $$\binom{12}{1} = 12$$
+   Then choose a suit for this card:
+   $$\binom{4}{1} = 4$$
+The total number of four of a kind hands is:
+   $$13 \times 12 \times 4 = 624$$
+
+Probability of Four of a Kind:
+$$P(\text{Four of a Kind}) = \frac{624}{2,598,960} \approx 0.00024$$
+
+## 5)
+
+To find the probability that the first  r bits of a telegraph, which sends M  0's and  N 1's in random order, contain exactly k 1's, we can use combinatorial methods.
+
+We need to choose k positions for the 1's from the first  r bits. The number of ways to choose k  positions from r  is given by:
+   $\binom{r}{k}$
+
+After placing  k 1's in the first  r bits, we need to fill the remaining r - k positions with 0's. The number of 0's available is  M, so we need to ensure $r - k \leq M$
+
+We still have N - k  1's left to place in the remaining  (M + N - r)  positions. The number of ways to choose N - k  positions from  M + N - r is:
+   $$\binom{M + N - r}{N - k}$$
+
+The total ways to arrange  M  0's and  N 1's is:
+$$\binom{M + N}{r}$$
+
+
+The probability that the first  r bits contain exactly k 1's is given by the ratio of the successful arrangements to the total arrangements:
+
+$$P(\text{exactly } k \text{ 1's in first } r \text{ bits}) = \frac{\binom{r}{k} \cdot \binom{M + N - r}{N - k}}{\binom{M + N}{r}}$$
+
+
 ## 6)
 
 #### 6.a
