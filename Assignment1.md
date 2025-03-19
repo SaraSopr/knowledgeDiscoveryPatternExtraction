@@ -1,16 +1,20 @@
 # Assignment 1
 ## 1)
-1.a If there are no rules at all, then all 10 members can sit in any order. The number of ways to arrange 10 distinct individuals is simply:
+#### 1.a
+If there are no rules at all, then all 10 members can sit in any order. The number of ways to arrange 10 distinct individuals is simply:
 $$ 10!=3,628,800 $$
-1.b Now, consider Mycroft and his aide. They must sit together because they do not trust each other. We can treat them as a single unit, reducing the number of elements to arrange from 10 to 9: 9!=?
+##### 1.b 
+Now, consider Mycroft and his aide. They must sit together because they do not trust each other. We can treat them as a single unit, reducing the number of elements to arrange from 10 to 9: 9!=?
 However, within this unit, Mycroft and his aide can switch places, which doubles the number of ways they can be arranged 
 $$ 2*9! $$
-1.c Here, we have 5 inspectors and 5 constables, and they must alternate in the seating arrangement. That means if we choose a starting group (either an inspector or a constable), the rest must follow an alternating pattern.
+#### 1.c 
+Here, we have 5 inspectors and 5 constables, and they must alternate in the seating arrangement. That means if we choose a starting group (either an inspector or a constable), the rest must follow an alternating pattern.
 Arrange the 5 inspectors in their 5 spots=5!
 Arrange the 5 constables in their 5 spots=5!
 Choose whether the first seat is taken by an inspector or a constable (2 choices): $ 2*5!*5! $
 
-1.d Finally, let’s consider the case where each informant is paired with a handler, and they must always sit together. We treat each pair as a single unit, meaning we now have 5 units instead of 10. 
+#### 1.d
+Finally, let’s consider the case where each informant is paired with a handler, and they must always sit together. We treat each pair as a single unit, meaning we now have 5 units instead of 10. 
 Arrange the 5 units: 5!
 Within each pair, the two individuals can swap places: $$ (2!)^5 $$
 So, $ 5!*(2!)^5 $
@@ -23,7 +27,8 @@ $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 ## 3)
 A mechanical hound moves on an $n \times m$ grid from $(1,1)$ to $(n,m)$, only moving **right** or **down**.
 
-3.a The total number of possible paths is given by the binomial coefficient: we have
+#### 3.a
+The total number of possible paths is given by the binomial coefficient: we have
 $ {n+m-2} $ path, because we have $ m-1 $ moves to the right (R) and $ n-1 $ moves to down (D), so every path is a sequence of 
 $ m-1+n-1 = n+m-2 $ moves. We have also $ n-1 $ ways to order D.
 
@@ -31,13 +36,15 @@ $$
 \binom{n+m-2}{n-1} = \frac{(n+m-2)!}{(n-1)!(m-1)!}
 $$
 
-3.b If the hound **must move right first**, it will be at $(1,2)$. From there, it has **$(n-1)$ down moves** and **$(m-2)$ right moves** left:
+#### 3.b
+If the hound **must move right first**, it will be at $(1,2)$. From there, it has **$(n-1)$ down moves** and **$(m-2)$ right moves** left:
 
 $$
 \binom{n+m-3}{n-1} = \frac{(n+m-3)!}{(n-1)!(m-2)!}
 $$
 
-3.c Exactly 3 Direction Changes
+#### 3.c
+Exactly 3 Direction Changes
 The hound **switches direction (right → down or down → right) exactly three times**. This means dividing its moves into two blocks of right moves and two blocks of down moves:
 
 $$
@@ -45,6 +52,53 @@ $$
 $$
 
 ## 6)
+
+#### 6.a
+To find the total number of exhibits, we need to calculate the combinations of selecting 3 birds from 8 and 3 reptiles from 6.
+
+-Choosing Birds: The number of ways to choose 3 birds from 8 is given by the combination formula:
+   $$\binom{n}{r} = \frac{n!}{r!(n-r)!}$$
+   For birds:
+   $$\binom{8}{3} = \frac{8!}{3!(8-3)!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = 56$$
+
+-Choosing Reptiles: The number of ways to choose 3 reptiles from 6 is:
+   $$\binom{6}{3} = \frac{6!}{3!(6-3)!} = \frac{6 \times 5 \times 4}{3 \times 2 \times 1} = 20$$
+
+The total number of exhibits is the product of the two combinations:
+   $$\text{Total Exhibits} = \binom{8}{3} \times \binom{6}{3} = 56 \times 20 = 1120$$
+
+#### 6.b 
+
+In this case, we need to exclude the combinations where both the hawk and the raven are selected.
+
+Cases with Both Hawk and Raven: If both the hawk and the raven are included, we need to choose 1 additional bird from the remaining 6 birds:
+   $$\binom{6}{1} = 6$$
+   The number of ways to choose 3 reptiles remains:
+   $$\binom{6}{3} = 20$$
+ 
+The total exhibits including both the hawk and the raven is:
+   $$\text{Exhibits with Hawk and Raven} = 6 \times 20 = 120$$
+
+The total valid exhibits avoiding this chaos is:
+   $$\text{Total Valid Exhibits} = \text{Total Exhibits} - \text{Exhibits with Hawk and Raven} = 1120 - 120 = 1000$$
+
+#### 6.c
+
+We need to exclude the combinations where both the venomous parrot and the cobra are selected.
+
+
+Cases with Both Parrot and Cobra: If both the parrot and the cobra are included, we need to choose 1 additional bird from the remaining 7 birds and 2 additional reptiles from the remaining 5 reptiles:
+
+- Choosing 1 more bird:
+   $$\binom{7}{1} = 7$$
+   - Choosing 2 more reptiles:$$\binom{5}{2} = 10$$
+
+The total exhibits including both the parrot and the cobra is:
+  $$\text{Exhibits with Parrot and Cobra} = 7 \times 10 = 70$$
+
+The total valid exhibits avoiding this trap is:
+   $$\text{Total Valid Exhibits} = \text{Total Exhibits} - \text{Exhibits with Parrot and Cobra} = 1120 - 70 = 1050$$
+
 
 ## 7)
 
@@ -245,3 +299,8 @@ $$P(X = k) = \binom{m}{k} p^k (1 - p)^{m-k}$$
 Replacing $p = \frac{1}{N}$, we get:
 
 $$P(X = k) = \binom{m}{k} \left( \frac{1}{N} \right)^k \left( \frac{N-1}{N} \right)^{m-k}$$
+
+## 14) 
+Run `Game14.py` with python3: 
+```bash
+python Game14.py
