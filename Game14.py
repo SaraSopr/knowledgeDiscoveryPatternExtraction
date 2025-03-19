@@ -19,7 +19,6 @@ def play_round():
 
 N = 100000
 moriarty_wins = 0
-ties = 0
 
 for _ in range(N):
     if play_round():
