@@ -173,7 +173,7 @@ Cases with Both Parrot and Cobra: If both the parrot and the cobra are included,
 
 - Choosing 1 more bird:
    $$\binom{7}{1} = 7$$
-   - Choosing 2 more reptiles:$$\binom{5}{2} = 10$$
+   - Choosing 2 more reptiles: $$\binom{5}{2} = 10$$
 
 The total exhibits including both the parrot and the cobra is:
   $$\text{Exhibits with Parrot and Cobra} = 7 \times 10 = 70$$
