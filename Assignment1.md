@@ -44,6 +44,7 @@ $$
 \binom{m-1}{2} \binom{n-1}{2}
 $$
 
+## 8)
 
 
 ## 9)
@@ -142,19 +143,13 @@ Calculate the Specific Distribution:
 
 
 ## 12)
-The probability of a single clue landing in the first bucket is $$ p = \frac{1}{n}$$ 
-Otherwise, the probability of a single clue landing in others buckets is $ 1-p $.  Since the clues are assigned independently, the total number of clues that end up in the first bucket follows a binomial distribution:
-$$
-X \sim \text{Binom}(m, p)
-$$
+The probability of a single clue landing in the first bucket is $$p = \frac{1}{n}$$ 
+Otherwise, the probability of a single clue landing in others buckets is $1-p$.  Since the clues are assigned independently, the total number of clues that end up in the first bucket follows a binomial distribution:
+$$X \sim \text{Binom}(m, p)$$
 
 Chance exactly k land in the first bucket:
-$$
-P(X = k) = \binom{m}{k} p^k (1 - p)^{m-k}
-$$
+$$P(X = k) = \binom{m}{k} p^k (1 - p)^{m-k}$$
 
-Replacing $ p = \frac{1}{N} $, we get:
+Replacing $p = \frac{1}{N}$, we get:
 
-$$
-P(X = k) = \binom{m}{k} \left( \frac{1}{N} \right)^k \left( \frac{N-1}{N} \right)^{m-k}
-$$
+$$P(X = k) = \binom{m}{k} \left( \frac{1}{N} \right)^k \left( \frac{N-1}{N} \right)^{m-k}$$
