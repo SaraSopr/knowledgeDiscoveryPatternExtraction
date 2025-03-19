@@ -44,7 +44,113 @@ $$
 \binom{m-1}{2} \binom{n-1}{2}
 $$
 
+## 6)
+
+## 7)
+
+#### 7.a
+
+We need to distribute £20 million across 4 enterprises, with minimum investments of £1M, £2M, £3M, and £4M respectively.
+
+Calculate the minimum total required investment.
+£1M + £2M + £3M + £4M = £10M
+ 
+After satisfying the minimum requirements, Holmes has £20M - £10M = £10M left to distribute.
+
+his is a problem of distributing 10 additional units of £1M across 4 enterprises.
+This is equivalent to placing 10 identical objects into 4 distinct groups, which can be solved using the formula for combinations with repetition allowed:
+$$\binom{n+r-1}{r} = \binom{10+4-1}{10} = \binom{13}{10} = \binom{13}{3} = \frac{13!}{10! \cdot 3!} = \frac{13 \cdot 12 \cdot 11}{3 \cdot 2 \cdot 1} = 286$$
+
+Therefore, Holmes has 286 different strategies to fund all 4 enterprises.
+
+#### 7.b
+- For funding exactly 3 enterprises, we first choose which 3 out of 4 to fund.
+$$\binom{4}{3} = 4$$ ways
+
+- For each combination of 3 enterprises, we need to calculate the investment strategies.
+
+**Case 1: Exclude Enterprise 1 (minimum £1M)**
+- Minimum investment for enterprises 2, 3, 4 is £2M + £3M + £4M = £9M
+- Holmes has £20M - £9M = £11M left to distribute
+- Number of ways = $$\binom{11+3-1}{11} = \binom{13}{11} = \binom{13}{2} = 78$$
+
+**Case 2: Exclude Enterprise 2 (minimum £2M)**
+- Minimum investment for enterprises 1, 3, 4 is £1M + £3M + £4M = £8M
+- Holmes has £20M - £8M = £12M left to distribute
+- Number of ways = $$\binom{12+3-1}{12} = \binom{14}{12} = \binom{14}{2} = 91$$
+
+**Case 3: Exclude Enterprise 3 (minimum £3M)**
+- Minimum investment for enterprises 1, 2, 4 is £1M + £2M + £4M = £7M
+- Holmes has £20M - £7M = £13M left to distribute
+- Number of ways = $$\binom{13+3-1}{13} = \binom{15}{13} = \binom{15}{2} = 105$$
+
+**Case 4: Exclude Enterprise 4 (minimum £4M)**
+- Minimum investment for enterprises 1, 2, 3 is £1M + £2M + £3M = £6M
+- Holmes has £20M - £6M = £14M left to distribute
+- Number of ways = $$\binom{14+3-1}{14} = \binom{16}{14} = \binom{16}{2} = 120$$
+
+Total number of ways to fund exactly 3 enterprises = 78 + 91 + 105 + 120 = 394
+Total number of ways to fund at least 3 enterprises = 286 + 394 = 680
+
+
+
 ## 8)
+#### 8.a
+We want to know how many agents are taking none of the courses. This requires finding the number of agents who are in the complement of the union of all three courses.
+
+$$|J \cup C \cup P| = |J| + |C| + |P| - |J \cap C| - |J \cap P| - |C \cap P| + |J \cap C \cap P|$$
+
+Substituting the numbers:
+
+$$|J \cup C \cup P| = 27 + 28 + 20 - 12 - 5 - 8 + 2 = 52$$
+
+So, 52 agents are taking at least one of the courses. The number of agents taking **none** of the courses is:
+
+$$100 - 52 = 48$$
+
+The probability that a randomly chosen agent is not taking any course is:
+$$P(\text{no course}) = \frac{48}{100} = 0.48$$
+
+#### 8.b
+To find the probability that a randomly selected agent is studying exactly one course, we need to compute the number of agents who are in exactly one of the courses, and then divide by the total number of agents.
+
+- Only Java: These are the agents in Java, but not in C++ or Python. This can be calculated as:
+  $$|J \setminus (C \cup P)| = |J| - (|J \cap C| + |J \cap P| - |J \cap C \cap P|)
+  $$
+  Substituting the values:
+  $$|J \setminus (C \cup P)| = 27 - (12 + 5 - 2) = 27 - 15 = 12$$
+
+- Only C++: These are the agents in C++, but not in Java or Python:
+  $$|C \setminus (J \cup P)| = |C| - (|J \cap C| + |C \cap P| - |J \cap C \cap P|)$$
+  Substituting the values:
+  $$|C \setminus (J \cup P)| = 28 - (12 + 8 - 2) = 28 - 18 = 10$$
+
+- Only Python: These are the agents in Python, but not in Java or C++:
+  $$|P \setminus (J \cup C)| = |P| - (|J \cap P| + |C \cap P| - |J \cap C \cap P|)$$
+  Substituting the values:
+  $$|P \setminus (J \cup C)| = 20 - (5 + 8 - 2) = 20 - 11 = 9$$
+  
+
+Now, we add the number of agents studying exactly one course:
+
+$$12 (\text{Only Java}) + 10 (\text{Only C++}) + 9 (\text{Only Python}) = 31$$
+
+The probability that an agent is studying exactly one course is:
+
+$$P(\text{exactly one course}) = \frac{31}{100} = 0.31$$ 
+
+#### 8.c
+
+We want the probability that at least one of the two randomly chosen agents is studying at least one course.
+The complementary event to this is that both agents are studying no course, so we can first calculate the probability that both agents are studying no course, and then subtract that from 1.
+
+- The probability that one agent is studying no course is $$P(\text{no course}) = 0.48$$
+- The probability that both agents are studying no course is:
+  $$P(\text{both no course}) = 0.48 \times 0.48 = 0.2304$$
+  
+Therefore, the probability that at least one of the two agents is studying at least one course is:
+
+$$P(\text{at least one has a course}) = 1 - 0.2304 = 0.7696$$
 
 
 ## 9)
