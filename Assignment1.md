@@ -17,7 +17,7 @@ Choose whether the first seat is taken by an inspector or a constable (2 choices
 Finally, let’s consider the case where each informant is paired with a handler, and they must always sit together. We treat each pair as a single unit, meaning we now have 5 units instead of 10. 
 Arrange the 5 units: 5!
 Within each pair, the two individuals can swap places: $$(2!)^5$$
-So, $ 5!*(2!)^5 $
+So, $5!*(2!)^5$
 
 ## 2)
 Irene Adler hides messages using k distinct numbers chosen from the set of numbers 1 to n. The numbers must be in increasing order. When we choose the numbers, it doesn’t matter in what order we pick them. Once picked, they will be sorted in increasing order automatically. The number of ways to make sorted arrays of k distinct numbers from n numbers is:
@@ -25,19 +25,19 @@ Irene Adler hides messages using k distinct numbers chosen from the set of numbe
 $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
 
 ## 3)
-A mechanical hound moves on an $n \times m$ grid from $(1,1)$ to $(n,m)$, only moving right or down.
+A mechanical hound moves on an $n \times m$ grid from $(1,1)$to $(n,m)$, only moving right or down.
 
 #### 3.a
 The total number of possible paths is given by the binomial coefficient: we have
-$ {n+m-2} $ path, because we have $ m-1 $ moves to the right (R) and $ n-1 $ moves to down (D), so every path is a sequence of 
-$ m-1+n-1 = n+m-2 $ moves. We have also $ n-1 $ ways to order D.
+${n+m-2}$ path, because we have $m-1$ moves to the right (R) and $n-1$ moves to down (D), so every path is a sequence of 
+$m-1+n-1 = n+m-2$ moves. We have also $n-1$ ways to order D.
 
 $$
 \binom{n+m-2}{n-1} = \frac{(n+m-2)!}{(n-1)!(m-1)!}
 $$
 
 #### 3.b
-If the hound must move right first, it will be at $(1,2)$. From there, it has **$(n-1)$ down moves** and **$(m-2)$ right moves** left:
+If the hound must move right first, it will be at $(1,2)$. From there, it has $(n-1)$ own moves and $(m-2)$ right moves left:
 
 $$
 \binom{n+m-3}{n-1} = \frac{(n+m-3)!}{(n-1)!(m-2)!}
@@ -273,7 +273,7 @@ $$12 (\text{Only Java}) + 10 (\text{Only C++}) + 9 (\text{Only Python}) = 31$$
 
 The probability that an agent is studying exactly one course is:
 
-$$P(\text{exactly one course}) = \frac{31}{100} = 0.31$$ 
+$$P(\text{exactly one course}) = \frac{31}{100} = 0.31$$
 
 #### 8.c
 
@@ -324,7 +324,7 @@ Choose the number that will appear thrice:
 $$\binom{6}{2} = 15 \text{ ways}$$
 We need to choose 3 different numbers from the remaining 5 numbers (since one number is already chosen). This can be done in: $\frac{6!}{3!3!} = 20$
 
-Total outcomes: $ 6^6 = 46656$
+Total outcomes: $6^6 = 46656$
 
 The probability of getting two numbers appearing thrice each is:
    $$\frac{15 \times 20}{46656} = \frac{300}{46656} \approx 0.00642$$
@@ -371,7 +371,7 @@ Calculate the Specific Distribution:
 
 
 ## 12)
-The probability of a single clue landing in the first bucket is $$p = \frac{1}{n}$$ 
+The probability of a single clue landing in the first bucket is $$p = \frac{1}{n}$$
 Otherwise, the probability of a single clue landing in others buckets is $1-p$.  Since the clues are assigned independently, the total number of clues that end up in the first bucket follows a binomial distribution:
 $$X \sim \text{Binom}(m, p)$$
 
